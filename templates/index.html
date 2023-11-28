@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CALCULATOR</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        min-height: 100%;
+      }
+      body,
+      div,
+      form,
+      input,
+      select,
+      p {
+        padding: 20;
+        margin: 0;
+        outline: none;
+        font-family: "Black Ops One", Arial, sans-serif;
+        font-size: 16px;
+        color: #eee;
+      }
+      body {
+      }
+      h1,
+      h2 {
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+      h2 {
+        margin: 0 0 0 8px;
+      }
+      .main-block {
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        height: 100%;
+        padding: 25px;
+        width: 30%;
+      }
+      form {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .title {
+        text-align: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .result {
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        text-align: center;
+        border-style: solid;
+        border-color: #797a7c;
+        border-radius: 5px;
+        padding: 10px;
+      }
+      input,
+      select {
+        padding: 5px;
+        margin-bottom: 30px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #eee;
+      }
+      input::placeholder {
+        color: #eee;
+      }
+      option:focus {
+        border: none;
+      }
+      option {
+        background: black;
+        border: none;
+      }
+      .btn-item,
+      button {
+        padding: 10px 5px;
+        margin-top: 20px;
+        border-radius: 5px;
+        border: none;
+        background: #0545fd;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 400;
+        color: #fff;
+        font-family: "Black Ops One", Arial, sans-serif;
+      }
+      .btn-item {
+        display: inline-block;
+        margin: 20px 5px 0;
+      }
+      button {
+        width: 100%;
+      }
+      button:hover,
+      .btn-item:hover {
+        background: #797a7c;
+        cursor: pointer;
+      }
+      @media (min-width: 568px) {
+        html,
+        body {
+          height: 100%;
+        }
+        .main-block {
+          height: calc(100% - 50px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-block">
+      <form method="post" action="/">
+        <div class="title">
+          <i class="fas fa-calculator fa-4x"></i>
+        </div>
+        <div class="title">
+          <h1>CALCULATOR</h1>
+        </div>
+        <div class="title">
+          <input
+            type="text"
+            name="number1"
+            id="number1"
+            placeholder="Number1"
+          />
+          <input
+            type="text"
+            name="number2"
+            id="number2"
+            placeholder="Number2"
+          />
+          <select name="operation" id="operation">
+            <option value="1">ADD</option>
+            <option value="2">SUBTRACT</option>
+            <option value="3">MULTIPLY</option>
+            <option value="4">DIVIDE</option>
+            <option value="5">POW</option>
+          </select>
+          <button type="submit">CALCULATE</button>
+        </div>
+        <div>
+          {% if result %}
+          <div class="result">{{ result }}</div>
+          {% endif %}
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
